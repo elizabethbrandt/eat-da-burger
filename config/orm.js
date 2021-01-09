@@ -17,4 +17,6 @@ const orm = {
 
     //     let queryString = "INSERT INTO " + table;
     // }
-}
+};
+
+module.exports = orm;
