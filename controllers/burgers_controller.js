@@ -18,4 +18,12 @@ router.get("/", (req, res) => {
 
 });
 
+router.post("/api/burgers", (req, res) => {
+
+    burgers.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], (data) => {
+
+        res.json({id: data.id})
+    })
+})
+
 module.exports = router;

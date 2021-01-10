@@ -2,9 +2,17 @@ const orm = require("../config/orm");
 
 const burgers = {
 
-    all: function(cbController) {
+    all: (cbController) => {
 
-        orm.all("burgers", function(res) {
+        orm.all("burgers", (res) => {
+
+            cbController(res);
+        })
+    },
+
+    create: (cols, vals, cbController) => {
+
+        orm.create("burgers", cols, vals, (res) => {
 
             cbController(res);
         })
