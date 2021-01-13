@@ -22,3 +22,22 @@ $(() => {
 })
 
 // Click even on the `Submit` button
+$(() => {
+    $(".submit").on("click", (event) => {
+
+        event.preventDefault();
+
+        const newBurger = {
+            burger_name: $("#newBurger").val().trim()
+        };
+
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        })
+        .then(() => {
+            console.log("Added a new burger");
+            location.reload();
+        })
+    })
+})
