@@ -3,7 +3,8 @@
 
     <button class="current-status" data-id="{{id}}" data-change="{{devoured}}">
         
-        {{#if devoured}}ANOTHER!{{else}}DEVOUR IT!{{/if}}
+        {{#unless devoured}}DEVOUR IT!{{/unless}}
 
     </button>
+    
 </li>
