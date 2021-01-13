@@ -1,15 +1,5 @@
 const connection = require("./connection");
 
-const printQuestionMarks = num => {
-    const arr = [];
-  
-    for (let i = 0; i < num; i++) {
-      arr.push("?");
-    }
-  
-    return arr.toString();
-}
-
 const objToSql = ob => {
     const arr = [];
   
@@ -45,7 +35,7 @@ const orm = {
 
     create: (table, cols, vals, cbModel) => {
 
-        let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals)})`
+        let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (?,?)`
 
         console.log(queryString + "CREATE QS");
 
