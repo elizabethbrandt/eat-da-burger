@@ -16,6 +16,14 @@ const burgers = {
 
             cbController(res);
         })
+    },
+
+    update: (vals, condition, cbController) => {
+
+        orm.update("burgers", vals, condition, (res) => {
+
+            cbController(res)
+        })
     }
 };
 
