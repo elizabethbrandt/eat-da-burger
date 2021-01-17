@@ -5,7 +5,7 @@
 <ul>
     {{#each burgers}}
         {{#unless devoured}}
-            {{> burger-waiting devoured=false}}
+            {{> burger-waiting devoured=true}}
         {{/unless}}
     {{/each}}
 </ul>
@@ -15,7 +15,7 @@
 <ul>
     {{#each burgers}}
         {{#if devoured}}
-            {{> burger-devoured devoured=true}}
+            {{> burger-devoured}}
         {{/if}}
     {{/each}}
 </ul>
