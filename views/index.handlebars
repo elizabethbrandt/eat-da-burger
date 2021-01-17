@@ -1,35 +1,51 @@
 <h1>Eat-Da-Burger!!</h1>
 
-<h2>Burgers awaiting devourment:</h2>
+<div class="container">
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{> burger-waiting devoured=true}}
-        {{/unless}}
-    {{/each}}
-</ul>
+    <div class="menu">
 
-<h2>Burgers in my bellay!</h2>
+        <h2>Burgers awaiting devourment:</h2>
 
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            {{> burger-devoured}}
-        {{/if}}
-    {{/each}}
-</ul>
-
-<h2>What's next on the menu?</h2>
-
-<form>
-
-    <div>
-
-        <input type="text" id="newBurger">
-
-        <button class="submit" type="submit">Order up!</button>
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    {{> burger-waiting devoured=true}}
+                {{/unless}}
+            {{/each}}
+        </ul>
 
     </div>
 
-</form>
+    <div class="menu">
+
+        <h2>Burgers in my bellay!</h2>
+
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                    {{> burger-devoured}}
+                {{/if}}
+            {{/each}}
+        </ul>
+
+    </div>
+
+</div>
+
+<div class="order-up">
+
+    <h2>What's next on the menu?</h2>
+
+    <form>
+
+        <div>
+
+            <input type="text" id="newBurger">
+
+            <button class="submit" type="submit">Order up!</button>
+
+        </div>
+
+    </form>
+
+</div>
