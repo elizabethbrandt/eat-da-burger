@@ -1,6 +1,7 @@
 const connection = require("./connection");
 
-const objToSql = ob => {
+function objToSql(ob) {
+    
     const arr = [];
   
     for (let key in ob) {
@@ -23,7 +24,7 @@ const orm = {
 
         let queryString = `SELECT * FROM ${table};`;
 
-        console.log(queryString + "ALL QS");
+        console.log(queryString);
 
         connection.query(queryString, (err, res) => {
 
@@ -37,7 +38,7 @@ const orm = {
 
         let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (?,?)`
 
-        console.log(queryString + "CREATE QS");
+        console.log(queryString);
 
         connection.query(queryString, vals, (err, res) => {
 
@@ -51,7 +52,7 @@ const orm = {
 
         let queryString = `UPDATE ${table} SET ${objToSql(vals)} WHERE ${condition};`
 
-        console.log(queryString + "UPDATE QS");
+        console.log(queryString);
 
         connection.query(queryString, (err, res) => {
             
