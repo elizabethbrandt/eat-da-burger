@@ -1,6 +1,6 @@
 // Click event on the `DEVOUR IT!` button
 $(() => {
-    $(".change-status").on("click", (event) => {
+    $(".change-status").on("click", function(event) {
 
         const id = $(this).data("id");
         const changeDevoured = $(this).data("change");
@@ -23,7 +23,7 @@ $(() => {
 
 // Click even on the `Submit` button
 $(() => {
-    $(".submit").on("click", (event) => {
+    $(".submit").on("click", function(event) {
 
         event.preventDefault();
 
